@@ -1,0 +1,13 @@
+// product.proto
+syntax = "proto3";
+service ProductService {
+    rpc GetProductPrice(ProductRequest) returns (ProductResponse);
+}
+
+message ProductRequest {
+    repeated int32 product_ids = 1;
+}
+
+message ProductResponse {
+    map<int32, float> prices = 1;
+}
